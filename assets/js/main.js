@@ -194,11 +194,11 @@
     },
     breakpoints: {
       320: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 10
       },
       480: {
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 20
       },
       640: {
@@ -216,33 +216,69 @@
     /**
    * Porfolio isotope and filter
    */
-    window.addEventListener('load', () => {
-      let bancosContainer = select('.bancos-container');
-      if (bancosContainer) {
+  window.addEventListener('load', () => {
+    let bancosContainer = select('.bancos-container');
+    if (bancosContainer) {
         let bancosIsotope = new Isotope(bancosContainer, {
-          itemSelector: '.bancos-item',
-          layoutMode: 'fitRows'
+            itemSelector: '.bancos-item',
+            layoutMode: 'fitRows'
         });
-  
+
         let bancosFilters = select('#bancos-flters li', true);
-  
-        on('click', '#bancos-flters li', function(e) {
-          e.preventDefault();
-          bancosFilters.forEach(function(el) {
+        let diaActual = new Date().getDay();
+        let filtroDia = obtenerFiltroDia(diaActual);
+
+        // Asignar la clase 'filter-active' al elemento de filtro correspondiente al día actual
+        bancosFilters.forEach(function(el) {
             el.classList.remove('filter-active');
-          });
-          this.classList.add('filter-active');
-  
-          bancosIsotope.arrange({
-            filter: this.getAttribute('data-filter')
-          });
-          bancosIsotope.on('arrangeComplete', function() {
-            AOS.refresh()
-          });
+        });
+        bancosFilters[diaActual].classList.add('filter-active');
+
+        // Filtrar los elementos según el día de la semana actual
+        bancosIsotope.arrange({
+            filter: filtroDia
+        });
+
+        // Manejador de eventos para cambiar el filtro al hacer clic
+        on('click', '#bancos-flters li', function(e) {
+            e.preventDefault();
+            bancosFilters.forEach(function(el) {
+                el.classList.remove('filter-active');
+            });
+            this.classList.add('filter-active');
+
+            bancosIsotope.arrange({
+                filter: this.getAttribute('data-filter')
+            });
+            bancosIsotope.on('arrangeComplete', function() {
+                AOS.refresh()
+            });
         }, true);
-      }
-  
-    });
+    }
+});
+
+// Función para obtener el filtro correspondiente al día de la semana
+function obtenerFiltroDia(dia) {
+    switch (dia) {
+        case 0:
+            return '.filter-domingo';
+        case 1:
+            return '.filter-lunes';
+        case 2:
+            return '.filter-martes';
+        case 3:
+            return '.filter-miercoles';
+        case 4:
+            return '.filter-jueves';
+        case 5:
+            return '.filter-viernes';
+        case 6:
+            return '.filter-sabado';
+        default:
+            return '*'; // Si no coincide con ninguno de los días, mostrar todos los elementos
+    }
+}
+
   
     /**
      * Initiate portfolio lightbox 
