@@ -699,6 +699,11 @@ section {
   font-style: italic;
 }
 
+@media (max-width:412px) {
+  .section-title h2 {
+    font-size: 40px;
+  }
+}
 
 
 /*--------------------------------------------------------------
@@ -880,7 +885,7 @@ section {
   position: relative;
   overflow: hidden;
   background: #fff;
-  box-shadow: 5px 10px 29px 0 rgba(42, 120, 184, 0.8);
+  box-shadow: 5px 10px 29px 0 rgba(42, 120, 184, 0.3);
   transition: all 0.3s ease-in-out;
   border-radius: 10px;
   height: 400px; 
@@ -1073,30 +1078,40 @@ section {
   } 
 
   @media (max-width: 820px) {
+    .icon-box-destacado-1{
+      height: 334px;
+    }
+    
     img.iconSucursales {
       width: 30%;
       margin-left: 211px;
     }
 
     .title1 {
-      font-size: 40px;
+      font-size: 24px;
     }
 
     .description1 {
-      font-size:25px;
+      font-size:18px;
     }
   }
 
-  @media (max-width: 391px) {
+  @media (max-width: 414px) {
     .icon-box-destacado-1{
-      height: 440px;
+      height: 334px;
     }
     .title1 {
       font-size: 25px;
     }
 
     .description1 {
-      font-size:18px;
+      font-size:14px;
+      margin-top: 20px;
+    }
+
+    img.iconSucursales {
+      width: 20%;
+      margin-left: 250px;
     }
   }
 
@@ -1405,10 +1420,11 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   margin-bottom: 20px;
-  padding: 35px 40px;
+  padding: 39px 49px;
   border-radius: 10px;
   background: #fff;
   box-shadow: 5px 10px 29px 0 rgba(42, 120, 184, 0.3);
+  height: 150px;
 }
 
 .services .icon-box i {
