@@ -1076,6 +1076,13 @@ section {
     width: 50%;
   }
   } 
+  @media (max-width: 1180px) {
+    .icon-box-destacado-1{
+      height: 498px;
+    }
+   
+  }
+
 
   @media (max-width: 820px) {
     .icon-box-destacado-1{
@@ -1114,7 +1121,6 @@ section {
       margin-left: 250px;
     }
   }
-
 
 
 
@@ -1382,6 +1388,12 @@ section {
   z-index: 200;
   animation: none;
   border-radius: 0;
+}
+
+@media (max-width: 390px) { 
+  .why-us .content h3 { 
+    padding: 30px;
+  }
 }
 
 @media (max-width: 1024px) {
