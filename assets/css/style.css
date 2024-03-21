@@ -888,13 +888,10 @@ section {
   box-shadow: 5px 10px 29px 0 rgba(42, 120, 184, 0.3);
   transition: all 0.3s ease-in-out;
   border-radius: 10px;
-  height: 400px; 
+  height: 420px; 
 }
 
 .icon-box-destacado-1:hover {
-  border-color: #ffffff;
-  border-style: solid;
-  border-width: 2px;
   transition: all 0.3s ease-in-out;
   transform: scale(1.03);
 }
@@ -1065,7 +1062,7 @@ section {
     box-shadow: 5px 10px 29px 0 rgba(42, 120, 184, 0.8);
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
-    height: 300px; 
+    height: 400px; 
   }
   img.iconSucursales {
     width: 50%;
@@ -1078,7 +1075,7 @@ section {
   } 
   @media (max-width: 1180px) {
     .icon-box-destacado-1{
-      height: 498px;
+      height: 500px;
     }
    
   }
@@ -1086,26 +1083,26 @@ section {
 
   @media (max-width: 820px) {
     .icon-box-destacado-1{
-      height: 334px;
+      height: 420px;
     }
     
     img.iconSucursales {
       width: 30%;
-      margin-left: 211px;
+      margin-left: 225px;
     }
 
     .title1 {
-      font-size: 24px;
+      font-size: 34px;
     }
 
     .description1 {
-      font-size:18px;
+      font-size:22px;
     }
   }
 
   @media (max-width: 414px) {
     .icon-box-destacado-1{
-      height: 334px;
+      height: 360px;
     }
     .title1 {
       font-size: 25px;
@@ -1118,7 +1115,7 @@ section {
 
     img.iconSucursales {
       width: 20%;
-      margin-left: 250px;
+      margin-left: 235px;
     }
   }
 
