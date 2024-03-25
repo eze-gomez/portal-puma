@@ -2315,12 +2315,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-/*--
+
 .contact {
-  background: url("../img/Contact us-cuate.svg") center no-repeat;
-  position: relative;
+  background-color: #c5eac9;
 }
----*/
 
 /*--
 .contact:before {
